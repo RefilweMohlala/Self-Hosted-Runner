@@ -1,0 +1,24 @@
+name: Deploy Static Website
+
+on:
+  push:
+    branches:
+      - main  # Trigger deployment on push to the main branch
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux]  # Specify your self-hosted runner environment
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Deploy Website to EC2
+        run: |
+          echo "Deploying to EC2"
+          scp -i /Users/mohla/Downloads/keys/zero.pem -o StrictHostKeyChecking=no -r ./index.html ubuntu@54.92.213.44:/var/www/html/
+          ssh -i /Users/mohla/Downloads/keys/zero.pem -o StrictHostKeyChecking=no ubuntu@54.92.213.44 'sudo systemctl restart apache2'
+
+      - name: Confirm Deployment
+        run: |
+          echo "Deployment Complete!"
