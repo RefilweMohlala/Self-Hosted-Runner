@@ -1,7 +1,7 @@
 # Self-Hosted-Runner
-Custom GitHub Actions CI/CD pipeline with Self-Hosted Runner and Python
+Custom GitHub Actions CI/CD pipeline with Self-Hosted Runner
 # Description
-This project sets a self-hosted GitHub Actions runner to execute Python workflow. It automates the CI/CD process
+This project sets a self-hosted GitHub Actions runner to execute static website workflow. It automates the CI/CD process
 # Features 
  - Custom CI/CD workflows using GitHub Actions
  - Python automation (testing, deployments, or scripts)
@@ -9,6 +9,6 @@ This project sets a self-hosted GitHub Actions runner to execute Python workflow
  - Integration with tools ??????
 # Technical Stack
  - GitHub Actions
- - Python
+ - html
  - Linux
-# Screenshots
+
